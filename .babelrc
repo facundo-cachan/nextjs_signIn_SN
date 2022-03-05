@@ -1,0 +1,32 @@
+{
+  "env": {
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [
+        ["babel-plugin-root-import"],
+        ["transform-react-remove-prop-types", {
+          "mode": "wrap",
+          "ignoreFilenames": ["node_modules"]
+        }],
+        ["react-remove-properties", { "properties": ["data-testid"] }]
+      ],
+      "comments": false
+    },
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": [
+        ["babel-plugin-root-import"],
+        ["transform-react-remove-prop-types", {
+          "mode": "wrap",
+          "ignoreFilenames": ["node_modules"]
+        }]
+      ]
+    },
+    "test": {
+      "presets": ["next/babel"],
+      "plugins": [
+        ["babel-plugin-root-import"]
+      ]
+    }
+  }
+}
